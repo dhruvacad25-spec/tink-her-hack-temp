@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Communication Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>AI Communication Web App</h1>
+
+    <div class="container">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <h2 id="output">Waiting for hand...</h2>
+    <button id="emergencyBtn">🚨 EMERGENCY</button>
+
+    <button onclick="speakText()">🔊 Speak</button>
+
+    <!-- MediaPipe CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
