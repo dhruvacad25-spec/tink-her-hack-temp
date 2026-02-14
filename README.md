@@ -6,7 +6,7 @@
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: Thinkfeminii
 
 ### Team Members
 - Member 1: Dhruva C - Jyothi Engineering College
