@@ -2,28 +2,39 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+**SilentSpeakAI**
 
 ## Basic Details
 
 ### Team Name: [Name]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: Dhruva C - Jyothi Engineering College
+- Member 2: Amritha Priya R S- Jyothi Engineering College
 
 ### Hosted Project Link
-[mention your project hosted link here]
-
+https://connectai1.netlify.app/
 ### Project Description
-[2-3 lines about what your project does]
+SilentSpeak AI is a real-time gesture recognition system that converts hand gestures into speech and text using AI. It also includes an emergency alert feature that allows users to quickly send distress messages to emergency contacts.
+
+The system is designed to assist speech-impaired individuals and improve communication accessibility.
 
 ### The Problem statement
-[What problem are you solving?]
+Many speech-impaired individuals struggle to communicate effectively in real-time situations. Additionally, in emergencies, people may not be able to verbally ask for help.
+
+There is a need for a simple, fast, and accessible gesture-based communication and emergency alert system.
 
 ### The Solution
-[How are you solving it?]
+We built a real-time AI-powered hand gesture recognition system using MediaPipe and JavaScript.
 
+The system:
+
+-Detects gestures using a webcam
+-Converts gestures into voice output
+-Maintains gesture history
+-Includes an emergency alert system with message sending functionality
+
+This provides a fast, contactless, and accessible communication solution.
 ---
 
 ## Technical Details
@@ -31,25 +42,30 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: JavaScript,HTML,CSS
+- Frameworks used: None (Vanilla JavaScript)
+
+- Libraries used: MediaPipe Hands,Web Speech API
+- Tools used:VS Code,Git,GitHub,Live Serve 
 
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+- Main components: Laptop with Webcam
+- Specifications: Minimum 4GB RAM,Webcam support,Modern browser 
 
+- Tools required: Internet connection,Browser
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: Real-Time Gesture Detection
+             -Uses MediaPipe to detect and classify hand gestures instantly.
+- Feature 2: Voice Output
+             -Detected gestures are converted into speech using Web Speech API.
+- Feature 3: Gesture History Panel
+             -Displays the last 5 detected gestures for better user interaction.
+- Feature 4: Emergency Alert System
+             -One-click emergency button opens pre-filled emergency message.
 
 ---
 
@@ -59,12 +75,16 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+no installation required
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+-Open index.html using:
+  -VS Code Live Server
+    OR
+  -Host on GitHub Pages
+-Allow camera permission.
 ```
 
 ### For Hardware:
@@ -83,51 +103,114 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+<img width="1919" height="916" alt="website layout" src="https://github.com/user-attachments/assets/85b827ba-d129-444c-a053-7013b8ffc65d" />
+The final Website layout.
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+<img width="543" height="117" alt="emergency alert message" src="https://github.com/user-attachments/assets/f8217be0-bc94-488d-bfd4-6de6ba69a3c0" />
+Whatsapp message sent to a emergency contact in emergency alert mode.
+
+<img width="1913" height="963" alt="gesture detection" src="https://github.com/user-attachments/assets/9035d32d-5d65-4212-a0ef-499a66ccdda7" />
+Shows realtime hand tracking and gesture output.
 
 #### Diagrams
 
 **System Architecture:**
 
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
+                ┌────────────────────┐
+                │        User         │
+                │   (Hand Gesture)    │
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │     Webcam Input    │
+                │ (Video Stream Feed) │
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │   MediaPipe Hands   │
+                │  (Landmark Detection)│
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │ Gesture Detection   │
+                │  Logic (JS Rules)   │
+                └───────┬───────┬────┘
+                        │       │
+                        │       │
+                        ▼       ▼
+           ┌────────────────┐  ┌─────────────────┐
+           │ Text Output UI │  │  Speech Engine  │
+           │ (Display Card) │  │ (Web Speech API)│
+           └────────────────┘  └─────────────────┘
+
+                        │
+                        ▼
+                ┌────────────────────┐
+                │ Emergency Button   │
+                │  (User Trigger)    │
+                └─────────┬──────────┘
+                          ▼
+                ┌────────────────────┐
+                │ WhatsApp Redirect  │
+                │ (Pre-filled Msg)   │
+                └────────────────────┘
+The system follows a client-side architecture:
+
+The webcam captures real-time video.
+
+MediaPipe Hands processes the video stream and detects 21 hand landmarks.
+
+Custom JavaScript logic classifies gestures based on landmark positions.
+
+Detected gestures are:
+
+Displayed as text on UI
+
+Converted into speech using Web Speech API
+
+The emergency module allows quick distress message generation through WhatsApp.
+
+The entire system runs in-browser without requiring a backend server.
 
 **Application Workflow:**
+![WhatsApp Image 2026-02-14 at 8 20 35 AM](https://github.com/user-attachments/assets/e2d7fd7d-7af3-47df-8b35-1c6a357c1947)
 
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+
+User shows hand gesture.
+
+System detects hand using MediaPipe.
+
+Landmark data is processed.
+
+Gesture is classified using rule-based logic.
+
+Output is displayed and spoken.
+
+If emergency button is pressed:
+
+Predefined message is generated
+
+WhatsApp opens with auto-filled alert message
 
 ---
 
-### For Hardware:
-
-#### Schematic & Circuit
-
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
 
 #### Build Photos
 
-![Team](Add photo of your team here)
+![Team]![WhatsApp Image 2026-02-14 at 8 01 37 AM](https://github.com/user-attachments/assets/d9730b80-3249-4663-a30d-14716145123d)
+
 
 ![Components](Add photo of your components here)
 *List out all components shown*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
+![Build]<img width="1919" height="1079" alt="Screenshot 2026-02-14 020354" src="https://github.com/user-attachments/assets/5ec20c52-13a6-4734-8133-1920fcc4ee8b" />
 
-![Final](Add photo of final product here)
-*Explain the final build*
+![Final]<img width="1913" height="963" alt="gesture detection" src="https://github.com/user-attachments/assets/95f070ec-c629-41e7-884c-7ece71762916" />
+
 
 ---
 
@@ -137,7 +220,7 @@ List the key features of your project:
 
 #### API Documentation
 
-**Base URL:** `https://api.yourproject.com`
+NA
 
 ##### Endpoints
 
@@ -361,54 +444,68 @@ python script.py -v --format json data.json
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
+https://github.com/user-attachments/assets/95ad369c-2ef1-4a58-942f-7627b9cc655e
+-Real-time gesture detection
+-Voice output
+-Emergency feature
 
 ### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
+https://connectai1.netlify.app/
 
 ---
 
 ## AI Tools Used (Optional - For Transparency Bonus)
 
 If you used AI tools during development, document them here for transparency:
+Tool Used: ChatGPT
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
+Purpose:
+-Debugging MediaPipe integration
+-Improving gesture classification logic
+-UI design improvements
+-Code optimization
 
-**Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
+Key Prompts Used:
+-"Fix MediaPipe camera integration error"
+-"Improve gesture detection accuracy"
+-"Steps to add emergency message system"
 
-**Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
+Approximate AI-generated Code: ~25%
 
-**Percentage of AI-generated code:** [Approximately X%]
+Human Contributions:
+-Full architecture design
+-Gesture mapping logic
+-UI layout design
+-Testing & debugging
+-Feature integration
 
-**Human Contributions:**
-- Architecture design and planning
-- Custom business logic implementation
-- Integration and testing
-- UI/UX design decisions
 
 *Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
 
 ---
 
-## Team Contributions
+## Team Contribution
+Dhruva c:
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+Gesture detection logic
+
+UI implementation
+
+Emergency feature
+
+Amritha Priya R S:
+
+Testing
+Documentation
+UI improvements
+Demo preparation
 
 ---
 
 ## License
 
-This project is licensed under the [LICENSE_NAME] License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License 
 
 **Common License Options:**
 - MIT License (Permissive, widely used)
